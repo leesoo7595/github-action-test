@@ -19,6 +19,8 @@ jobs:
         with:
           version: 8
           run_install: false
+      - name: Install Dependency
+        run: pnpm install
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
