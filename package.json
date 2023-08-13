@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ci": "pnpm lint && pnpm build && pnpm playwright"
+    "ci": "pnpm lint && pnpm build && pnpm playwright test"
   },
   "dependencies": {
     "@types/node": "20.4.9",
