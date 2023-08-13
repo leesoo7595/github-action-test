@@ -28,7 +28,10 @@ jobs:
         run: pnpm run ci
 
       - name: Run http server and test
-        run: pnpm http-server .next -p 3000 && pnpm run test
+        run: pnpm http-server .next -p 3000
+
+      - name: Run playwright test
+        run: pnpm run test
 
       - name: Stop http server
         run: pkill -f "http-server"
