@@ -27,6 +27,17 @@ jobs:
       - name: Run pnpm ci
         run: pnpm run ci
 
+      - name: Run http server and test
+        run: |
+          pnpm http-server .next -p 3000 &
+
+      - name: Run playwright test
+        run: pnpm run test
+
+      - name: Stop http server
+        run: |
+          pkill -15 "http-server"
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
