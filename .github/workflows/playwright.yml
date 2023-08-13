@@ -36,7 +36,7 @@ jobs:
 
       - name: Stop http server
         run: |
-          pkill -f "http-server"
+          pkill -15 "http-server"
 
       - uses: actions/upload-artifact@v3
         if: always()
