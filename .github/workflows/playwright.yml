@@ -20,11 +20,13 @@ jobs:
           version: 8
           run_install: false
       - name: Install Dependency
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Install Playwright Browsers
-        run: pnpm exec playwright install --with-deps
-      - name: Run Playwright tests
-        run: pnpm playwright test
+        run: pnpm dlx playwright install --with-deps
+
+      - name: Run pnpm ci
+        run: pnpm ci
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
